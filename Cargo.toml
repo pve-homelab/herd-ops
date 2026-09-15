@@ -1,0 +1,29 @@
+[package]
+name = "dev-team"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "Dev Team — Herdr plugin for Master-gated multi-agent coding loops with kanban and lazy git"
+readme = "README.md"
+repository = "https://github.com/pve-homelab/Development-Team"
+
+[[bin]]
+name = "dev-team"
+path = "src/main.rs"
+
+[dependencies]
+anyhow = "1"
+clap = { version = "4", features = ["derive"] }
+crossterm = "0.28"
+directories = "5"
+ratatui = "0.28"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+thiserror = "1"
+toml = "0.8"
+ureq = { version = "2", features = ["tls"] }
+url = "2"
+uuid = { version = "1", features = ["v4"] }
+
+[dev-dependencies]
+tempfile = "3"

@@ -1,0 +1,47 @@
+# Dev Team — Master-gated multi-agent coding loop with kanban + lazy git.
+id = "dev-team"
+name = "Dev Team"
+version = "0.1.0"
+min_herdr_version = "0.9.0"
+description = "Orchestrated Planner/Coder/Reviewer/Tester/Architect loop with Master confirmation gate, live kanban, and lazy git project setup."
+platforms = ["linux", "macos", "windows"]
+
+[[build]]
+platforms = ["linux", "macos"]
+command = ["bash", "scripts/build.sh"]
+
+[[build]]
+platforms = ["windows"]
+command = ["powershell", "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "scripts/build.ps1"]
+
+[[actions]]
+id = "open"
+title = "Dev Team"
+description = "Open the Dev Team control menu"
+platforms = ["linux", "macos"]
+command = ["bash", "scripts/open.sh"]
+
+[[actions]]
+id = "open-windows"
+title = "Dev Team"
+description = "Open the Dev Team control menu"
+platforms = ["windows"]
+command = ["powershell", "-NoProfile", "-NonInteractive", "-Command", "& .\\scripts\\open.ps1"]
+
+[[panes]]
+id = "menu"
+title = "Dev Team"
+placement = "popup"
+width = "92%"
+height = "85%"
+platforms = ["linux", "macos"]
+command = ["./bin/dev-team"]
+
+[[panes]]
+id = "menu-windows"
+title = "Dev Team"
+placement = "popup"
+width = "92%"
+height = "85%"
+platforms = ["windows"]
+command = ["powershell", "-NoProfile", "-Command", "& .\\bin\\dev-team.exe"]
